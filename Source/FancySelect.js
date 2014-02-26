@@ -89,6 +89,9 @@ var FancySelect = new Class({
 			// Throw "change" event
 			if (this.options.legacyEvents) {
 				this.element.fireEvent('change');
+				if (this.element.onchange) {
+				    this.element.onchange();
+				}
 				this.element.getParents().fireEvent('change');
 			}
 			
